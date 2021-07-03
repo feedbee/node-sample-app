@@ -1,0 +1,24 @@
+{
+	// https://code.visualstudio.com/docs/remote/devcontainerjson-reference
+
+	"name": "node-sample-app",
+
+	"context": "..",
+
+	"dockerFile": "../Dockerfile.dev",
+
+	"settings": { 
+		"terminal.integrated.shell.linux": null
+	},
+
+	"extensions": [
+		"ms-azuretools.vscode-docker",
+	],
+
+	"forwardPorts": [3000],
+
+	// "postCreateCommand": "(cd ../ && go get -v golang.org/x/tools/gopls github.com/mdempsky/gocode github.com/uudashr/gopkgs/v2/cmd/gopkgs github.com/ramya-rao-a/go-outline github.com/stamblerre/gocode github.com/rogpeppe/godef && ln -s /go/bin/gocode /go/bin/gocode-gomode)",
+
+	"workspaceMount": "source=${localWorkspaceFolder},target=/usr/src/app/,type=bind,consistency=cached",
+	"workspaceFolder": "/usr/src/app/"
+}
