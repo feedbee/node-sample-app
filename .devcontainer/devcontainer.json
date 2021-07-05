@@ -20,5 +20,9 @@
 	// "postCreateCommand": "(cd ../ && go get -v golang.org/x/tools/gopls github.com/mdempsky/gocode github.com/uudashr/gopkgs/v2/cmd/gopkgs github.com/ramya-rao-a/go-outline github.com/stamblerre/gocode github.com/rogpeppe/godef && ln -s /go/bin/gocode /go/bin/gocode-gomode)",
 
 	"workspaceMount": "source=${localWorkspaceFolder},target=/usr/src/app/,type=bind,consistency=cached",
-	"workspaceFolder": "/usr/src/app/"
+	"workspaceFolder": "/usr/src/app/",
+	"mounts": [
+		"source=${localEnv:HOME}/.gitconfig,target=/root/.gitconfig,type=bind,consistency=cached",
+		"source=${localEnv:HOME}/.ssh,target=/root/.ssh,type=bind,consistency=cached",
+	],
 }
